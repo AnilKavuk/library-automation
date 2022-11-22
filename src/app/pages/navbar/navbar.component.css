@@ -1,0 +1,7 @@
+.nav-item {
+  cursor: pointer;
+}
+
+.active {
+  color: rgb(91, 91, 247);
+}

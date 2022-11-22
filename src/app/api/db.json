@@ -1,5 +1,52 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "users": [
+    {
+      "id": 1,
+      "name": "Anıl Kavuk",
+      "email": "anil@test.com",
+      "password": "test1234",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Çınar Kavuk",
+      "email": "cinar@test.com",
+      "password": "test2014",
+      "role": "user"
+    }
+  ],
+
+  "bookCategory": [
+    { "id": 1, "name": "Bilim-Kurgu" },
+    { "id": 2, "name": "Deneme" },
+    { "id": 3, "name": "Şiir" },
+    { "id": 4, "name": "Çizgi Roman" },
+    { "id": 5, "name": "Polisiye" },
+    { "id": 6, "name": "Macera" },
+    { "id": 7, "name": "Tarih" }
+  ],
+
+  "books": [
+    {
+      "id": 1,
+      "isbn": 9789754583863,
+      "name": "Bioshock: Rapture Şehri",
+      "author": "John Shirley",
+      "categoryId": 1,
+      "publisher": "İthaki Yayınları"
+    },
+    {
+      "id": 2,
+      "isbn": 9789754583816,
+      "name": "Hangi Atatürk",
+      "author": "Attila İlhan",
+      "categoryId": 2,
+      "publisher": "Türkiye İş Bankası Kültür Yayınları"
+    }
+  ],
+
+  "travelingLibrary": [
+    { "id": 1, "userId": 1, "bookId": 1, "dateStarted": "2022-11-01" },
+    { "id": 2, "userId": 2, "bookId": 2, "dateStarted": "2021-12-01" }
+  ]
 }
