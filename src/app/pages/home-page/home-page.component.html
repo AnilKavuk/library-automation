@@ -1,1 +1,41 @@
-<p class="test">Test</p>
+<main>
+  <div
+    class="container-fluid bg-trasparent my-4 p-3"
+    style="position: relative"
+  >
+    <div class="row row-cols-2 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+      <div class="col" *ngFor="let book of books">
+        <div class="card h-100 shadow-lg">
+          <img
+            src="assets/images/card-book.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <div class="clearfix mb-3">
+              <span
+                class="d-flex justify-content-center badge rounded-pill bg-primary"
+                >{{ book.publisher }}</span
+              ><br />
+              <span class="d-flex justify-content-center price-hp">{{
+                book.isbn
+              }}</span>
+            </div>
+
+            <h5 class="my-0 d-flex justify-content-center mt-5 my-0">
+              {{ book.author }}
+            </h5>
+
+            <h5 class="my-0 d-flex justify-content-center">
+              {{ book.name }}
+            </h5>
+
+            <div class="d-flex justify-content-center py-4">
+              <button class="btn btn-warning">borrow a book</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
