@@ -8,7 +8,8 @@
 }
 
 .h-custom {
-  height: calc(100% - 73px);
+  height: calc(100% - 10px);
+
 }
 
 @media (max-width: 450px) {

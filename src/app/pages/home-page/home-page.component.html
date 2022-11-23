@@ -1,41 +1,39 @@
-<main>
+<div class="container my-5 overflow-auto">
+  <h1 style="text-align: center">Books</h1>
   <div
-    class="container-fluid bg-trasparent my-4 p-3"
-    style="position: relative"
-  >
-    <div class="row row-cols-2 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
-      <div class="col" *ngFor="let book of books">
-        <div class="card h-100 shadow-lg">
-          <img
-            src="assets/images/card-book.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <div class="clearfix mb-3">
-              <span
-                class="d-flex justify-content-center badge rounded-pill bg-primary"
-                >{{ book.publisher }}</span
-              ><br />
-              <span class="d-flex justify-content-center price-hp">{{
-                book.isbn
-              }}</span>
-            </div>
+    class="my-2"
+    style="display: flex; justify-content: space-between; align-items: center"
+  ></div>
 
-            <h5 class="my-0 d-flex justify-content-center mt-5 my-0">
-              {{ book.author }}
-            </h5>
-
-            <h5 class="my-0 d-flex justify-content-center">
-              {{ book.name }}
-            </h5>
-
-            <div class="d-flex justify-content-center py-4">
-              <button class="btn btn-warning">borrow a book</button>
-            </div>
+  <div class="row">
+    <div
+      class="col-sm-12 col-md-5 col-lg-3 mb-5"
+      *ngFor="let book of books"
+      [routerLink]="'/customer-detail/' + book.id"
+    >
+      <div class="card">
+        <img
+          src="assets/images/card-book.jpg"
+          alt="Avatar"
+          width="auto"
+          height="auto"
+        />
+        <div class="mt-2" style="text-align: center">
+          <h4 style="font-size: 14px">
+            <b
+              >{{ book.isbn }}<br />
+              {{ book.publisher }}</b
+            >
+          </h4>
+          <p>
+            Book Name : {{ book.name }} <br />
+            Author : {{ book.author }}
+          </p>
+          <div>
+            <button class="btn btn-danger">Delete</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-</main>
+</div>
