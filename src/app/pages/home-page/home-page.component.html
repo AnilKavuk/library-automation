@@ -1,16 +1,7 @@
-<div class="container my-5 overflow-auto">
-  <h1 style="text-align: center">Books</h1>
-  <div
-    class="my-2"
-    style="display: flex; justify-content: space-between; align-items: center"
-  ></div>
-
+<h1 class="d-flex justify-content-center">Books</h1>
+<div class="container mx-0 my-5">
   <div class="row">
-    <div
-      class="col-sm-12 col-md-5 col-lg-3 mb-5"
-      *ngFor="let book of books"
-      [routerLink]="'/customer-detail/' + book.id"
-    >
+    <div class="col-sm-12 col-md-5 col-lg-3 mb-3" *ngFor="let book of books">
       <div class="card">
         <img
           src="assets/images/card-book.jpg"
@@ -29,8 +20,11 @@
             Book Name : {{ book.name }} <br />
             Author : {{ book.author }}
           </p>
-          <div>
+
+          <div class="d-flex justify-content-around my-4">
             <button class="btn btn-danger">Delete</button>
+            <button class="btn btn-primary">Edit</button>
+            <button class="btn btn-success">Borrow a book</button>
           </div>
         </div>
       </div>
