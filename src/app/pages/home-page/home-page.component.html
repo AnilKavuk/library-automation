@@ -1,30 +1,46 @@
-<h1 class="d-flex justify-content-center">Books</h1>
-<div class="container mx-0 my-5">
+<div *ngIf="isLoading">
+  <app-loading></app-loading>
+</div>
+<div class="container my-5 vh-100">
+  <div
+    class="my-2"
+    style="display: flex; justify-content: space-between; align-items: center"
+  ></div>
+
+  <form class="mb-5">
+    <label class="mx-2">Publisher:</label
+    ><input type="text" name="customerName" /> <label class="mx-2">ISBN:</label
+    ><input type="text" /> <label class="mx-2">Book Name:</label
+    ><input type="text" /> <label class="mx-2">Author:</label
+    ><input type="text" />
+  </form>
+
   <div class="row">
-    <div class="col-sm-12 col-md-5 col-lg-3 mb-3" *ngFor="let book of books">
+    <div
+      class="col-sm-12 col-md-4 col-lg-3 mb-3 d-flex align-items-stretch"
+      *ngFor="let book of books"
+    >
       <div class="card">
         <img
           src="assets/images/card-book.jpg"
-          alt="Avatar"
+          alt="card-book"
           width="auto"
           height="auto"
         />
         <div class="mt-2" style="text-align: center">
           <h4 style="font-size: 14px">
             <b
-              >{{ book.isbn }}<br />
-              {{ book.publisher }}</b
-            >
+              >{{ book.publisher }} <br /><br />
+              {{ book.isbn }}
+            </b>
           </h4>
           <p>
-            Book Name : {{ book.name }} <br />
+            Book Name : {{ book.name }} <br /><br />
             Author : {{ book.author }}
           </p>
-
           <div class="d-flex justify-content-around my-4">
             <button class="btn btn-danger">Delete</button>
             <button class="btn btn-primary">Edit</button>
-            <button class="btn btn-success">Borrow a book</button>
           </div>
         </div>
       </div>
