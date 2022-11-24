@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { EditBookComponent } from './pages/edit-book/edit-book.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoadingComponent } from './pages/loading/loading.component';
@@ -15,7 +16,6 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ToastrModule } from 'ngx-toastr';
-import { EditBookComponent } from './pages/edit-book/edit-book.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,10 @@ import { EditBookComponent } from './pages/edit-book/edit-book.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
     StoreDevtoolsModule.instrument({
       autoPause: true,
     }),
