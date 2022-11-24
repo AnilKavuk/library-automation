@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AppStoreState } from 'src/app/store/app.state';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/services/books.service';
 import { LoadingService } from 'src/app/services/loading.service';
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { ToastrMessageService } from 'src/app/services/toastr-message.service';
+import { setBookModel } from 'src/app/store/book/book.actions';
 
 @Component({
   selector: 'app-home-page',
@@ -14,12 +18,16 @@ import { ToastrMessageService } from 'src/app/services/toastr-message.service';
 export class HomePageComponent implements OnInit {
   books!: Book[];
   isLoading!: boolean;
+  bookModel$: Observable<Book | null>;
   constructor(
     private booksService: BooksService,
     private loadingService: LoadingService,
     private toaster: ToastrMessageService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private store: Store<AppStoreState>
+  ) {
+    this.bookModel$ = this.store.select((state) => state.book.bookModel);
+  }
 
   ngOnInit(): void {
     this.isPageLoading();
@@ -41,7 +49,8 @@ export class HomePageComponent implements OnInit {
     }, 500);
   }
 
-  editPage() {
+  editPage(id: number, book: Book) {
+    this.booksService.saveBookEdit(book);
     this.router.navigateByUrl('editBook');
   }
 
