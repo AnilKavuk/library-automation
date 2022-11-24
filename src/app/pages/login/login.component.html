@@ -9,20 +9,38 @@
         />
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form>
+        <form [formGroup]="loginForm">
           <h3 class="mb-3">Login</h3>
 
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input
-              formControlName="userName"
-              type="text"
+              formControlName="email"
+              type="email"
               id="form3Example3"
               class="form-control form-control-lg"
-              placeholder="Enter username"
+              placeholder="Enter email"
             />
-            <div class="alert alert-danger" role="alert">
-              Username is required
+            <div
+              class="alert alert-danger"
+              role="alert"
+              *ngIf="
+                loginForm.get('email')?.hasError('required') &&
+                (loginForm.dirty || loginForm.touched)
+              "
+            >
+              Email is required
+            </div>
+
+            <div
+              class="alert alert-danger"
+              role="alert"
+              *ngIf="
+                loginForm.get('email')?.hasError('email') &&
+                (loginForm.dirty || loginForm.touched)
+              "
+            >
+              you must enter your email address
             </div>
           </div>
 
@@ -37,11 +55,25 @@
               placeholder="Enter password"
             />
 
-            <div class="alert alert-danger" role="alert">
+            <div
+              class="alert alert-danger"
+              role="alert"
+              *ngIf="
+                loginForm.get('password')?.hasError('required') &&
+                (loginForm.dirty || loginForm.touched)
+              "
+            >
               Password is required
             </div>
-            <div class="alert alert-danger" role="alert">
-              Password must be minimum 4 length
+            <div
+              class="alert alert-danger"
+              role="alert"
+              *ngIf="
+                loginForm.get('password')?.hasError('minlength') &&
+                (loginForm.dirty || loginForm.touched)
+              "
+            >
+              Password must be minimum 8 length
             </div>
           </div>
           <div class="text-center text-lg-start mt-4 pt-2">
