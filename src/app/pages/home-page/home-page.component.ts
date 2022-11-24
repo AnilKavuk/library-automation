@@ -49,9 +49,9 @@ export class HomePageComponent implements OnInit {
     }, 500);
   }
 
-  editPage(id: number, book: Book) {
+  editPage(book: Book) {
     this.booksService.saveBookEdit(book);
-    this.router.navigateByUrl('editBook');
+    this.router.navigateByUrl('editOrAddBook');
   }
 
   deleteBook(id: number) {

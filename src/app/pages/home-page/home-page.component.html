@@ -34,15 +34,17 @@
               {{ book.isbn }}
             </b>
           </h4>
-          <p>
-            Book Name : {{ book.name }} <br /><br />
-            Author : {{ book.author }}
+          <p style="font-size: 15px">
+            <span style="font-size: 14px; font-weight: bold">Book Name :</span>
+            {{ book.name }} <br />
+            <span style="font-size: 14px; font-weight: bold">Author:</span>
+            {{ book.author }}
           </p>
           <div class="d-flex justify-content-around my-4">
             <button class="btn btn-danger" (click)="deleteBook(book.id)">
               Delete
             </button>
-            <button class="btn btn-primary" (click)="editPage(book.id, book)">
+            <button class="btn btn-primary" (click)="editPage(book)">
               Edit
             </button>
           </div>

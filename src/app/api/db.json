@@ -63,7 +63,15 @@
       "isbn": 9789754583896,
       "name": "Hangi Atatürk",
       "author": "Attila İlhan",
-      "categoryId": 2,
+      "categoryId": "2",
+      "publisher": "Türkiye İş Bankası Kültür Yayınları"
+    },
+    {
+      "id": 3,
+      "isbn": "9645463654694",
+      "name": "Seksen Günde Dünya Gezisi",
+      "author": "Jules Verne",
+      "categoryId": "6",
       "publisher": "Türkiye İş Bankası Kültür Yayınları"
     }
   ],

@@ -33,6 +33,10 @@ export class BooksService {
     return this.httpClient.delete(`${this.controllerUrl}/${id}`);
   }
 
+  update(book: Book) {
+    return this.httpClient.put<Book>(`${this.controllerUrl}/${book.id}`, book);
+  }
+
   saveBookEdit(bookModel: Book) {
     return this.store.dispatch(setBookModel({ bookModel }));
   }

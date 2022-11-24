@@ -7,7 +7,7 @@
           style="border-radius: 15px"
         >
           <div class="card-body p-4 p-md-5">
-            <h3 class="mb-3 pb-2 pb-md-0 mb-md-3 text-center">Edit Book</h3>
+            <h3 class="mb-3 pb-2 pb-md-0 mb-md-3 text-center">{{title}}</h3>
 
             <div style="display: flex; justify-content: center">
               <img
@@ -16,7 +16,7 @@
                 alt="create-customer-image"
               />
             </div>
-            <form>
+            <form [formGroup]="editBook">
               <div class="row">
                 <div class="col-md-12 mb-4">
                   <label class="form-label" for="isbn">ISBN</label>
@@ -25,12 +25,27 @@
                       type="text"
                       id="isbn"
                       class="form-control form-control-lg"
+                      formControlName="isbn"
                       maxlength="13"
                     />
-                    <div class="alert alert-danger" role="alert">
+                    <div
+                      class="alert alert-danger"
+                      role="alert"
+                      *ngIf="
+                        editBook.get('isbn')?.hasError('required') &&
+                        (editBook.dirty || editBook.touched)
+                      "
+                    >
                       ISBN is required
                     </div>
-                    <div class="alert alert-danger" role="alert">
+                    <div
+                      class="alert alert-danger"
+                      role="alert"
+                      *ngIf="
+                        editBook.get('isbn')?.hasError('minlength') &&
+                        (editBook.dirty || editBook.touched)
+                      "
+                    >
                       ISBN minimum length must be 13 digits
                     </div>
                   </div>
@@ -44,8 +59,16 @@
                       type="text"
                       id="name"
                       class="form-control form-control-lg"
+                      formControlName="name"
                     />
-                    <div class="alert alert-danger" role="alert">
+                    <div
+                      class="alert alert-danger"
+                      role="alert"
+                      *ngIf="
+                        editBook.get('name')?.hasError('required') &&
+                        (editBook.dirty || editBook.touched)
+                      "
+                    >
                       Book Name is required
                     </div>
                   </div>
@@ -57,8 +80,16 @@
                       type="text"
                       id="author"
                       class="form-control form-control-lg"
+                      formControlName="author"
                     />
-                    <div class="alert alert-danger" role="alert">
+                    <div
+                      class="alert alert-danger"
+                      role="alert"
+                      *ngIf="
+                        editBook.get('author')?.hasError('required') &&
+                        (editBook.dirty || editBook.touched)
+                      "
+                    >
                       Author Name is required
                     </div>
                   </div>
@@ -71,10 +102,18 @@
                     <input
                       type="input"
                       id="publisher"
+                      formControlName="publisher"
                       class="form-control form-control-lg"
                     />
-                    <div class="alert alert-danger" role="alert">
-                      Birthday is required
+                    <div
+                      class="alert alert-danger"
+                      role="alert"
+                      *ngIf="
+                        editBook.get('author')?.hasError('required') &&
+                        (editBook.dirty || editBook.touched)
+                      "
+                    >
+                      Publisher is required
                     </div>
                   </div>
                 </div>
@@ -87,21 +126,38 @@
                       name="categoryId"
                       id="categoryId"
                       class="form-control form-control-lg"
+                      (change)="selectChangeHandler($event)"
+                      formControlName="categoryId"
                     >
+                      <!-- <option selected value="" disabled>
+                        --Please choose an option--
+                      </option> -->
                       <option
                         *ngFor="let bookCategory of bookCategories"
-                        value="{{ bookCategory.name }}"
+                        value="{{ bookCategory.id }}"
                       >
                         {{ bookCategory.name }}
                       </option>
                     </select>
+                    <div
+                      class="alert alert-danger"
+                      role="alert"
+                      *ngIf="
+                        editBook.get('categoryId')?.hasError('required') &&
+                        (editBook.dirty || editBook.touched)
+                      "
+                    >
+                      Publisher is required
+                    </div>
                   </div>
                 </div>
               </div>
             </form>
 
             <div class="mt-4 pt-2" style="float: left">
-              <button class="btn btn-success btn-lg">Update</button>
+              <button class="btn btn-success btn-lg" (click)="bookUpdate()">
+                Update
+              </button>
             </div>
           </div>
         </div>
