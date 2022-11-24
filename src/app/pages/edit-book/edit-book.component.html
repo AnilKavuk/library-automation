@@ -1,0 +1,111 @@
+<section class="gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div
+          class="card shadow-2-strong card-registration"
+          style="border-radius: 15px"
+        >
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-3 pb-2 pb-md-0 mb-md-3 text-center">Edit Book</h3>
+
+            <div style="display: flex; justify-content: center">
+              <img
+                class="card-img"
+                src="assets/images/edit-book.png"
+                alt="create-customer-image"
+              />
+            </div>
+            <form>
+              <div class="row">
+                <div class="col-md-12 mb-4">
+                  <label class="form-label" for="isbn">ISBN</label>
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="isbn"
+                      class="form-control form-control-lg"
+                      maxlength="13"
+                    />
+                    <div class="alert alert-danger" role="alert">
+                      ISBN is required
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                      ISBN minimum length must be 13 digits
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label class="form-label" for="name">Book Name</label>
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="name"
+                      class="form-control form-control-lg"
+                    />
+                    <div class="alert alert-danger" role="alert">
+                      Book Name is required
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label class="form-label" for="author">Author</label>
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="author"
+                      class="form-control form-control-lg"
+                    />
+                    <div class="alert alert-danger" role="alert">
+                      Author Name is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-4">
+                  <label class="form-label" for="publisher">Publisher</label>
+                  <div class="form-outline">
+                    <input
+                      type="input"
+                      id="publisher"
+                      class="form-control form-control-lg"
+                    />
+                    <div class="alert alert-danger" role="alert">
+                      Birthday is required
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                  <label class="form-label" for="categoryId"
+                    >Select Book Category</label
+                  >
+                  <div class="form-outline">
+                    <select
+                      name="categoryId"
+                      id="categoryId"
+                      class="form-control form-control-lg"
+                    >
+                      <option
+                        *ngFor="let bookCategory of bookCategories"
+                        value="{{ bookCategory.name }}"
+                      >
+                        {{ bookCategory.name }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div class="mt-4 pt-2" style="float: left">
+              <button class="btn btn-success btn-lg">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

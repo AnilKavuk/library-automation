@@ -16,4 +16,8 @@ export class BooksService {
     //Todo get metodu Get Http istediğini hazırlıyor.
     return this.httpClient.get<Book[]>(this.controllerUrl);
   }
+
+  delete(id: number) {
+    return this.httpClient.delete(`${this.controllerUrl}/${id}`);
+  }
 }

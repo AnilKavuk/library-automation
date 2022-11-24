@@ -15,6 +15,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ToastrModule } from 'ngx-toastr';
+import { EditBookComponent } from './pages/edit-book/edit-book.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     HomePageComponent,
     LoadingComponent,
+    EditBookComponent,
   ],
   imports: [
     CommonModule,

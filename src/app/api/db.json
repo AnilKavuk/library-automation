@@ -60,59 +60,11 @@
     },
     {
       "id": 2,
-      "isbn": 9789754583816,
+      "isbn": 9789754583896,
       "name": "Hangi Atatürk",
       "author": "Attila İlhan",
       "categoryId": 2,
       "publisher": "Türkiye İş Bankası Kültür Yayınları"
-    },
-    {
-      "id": 3,
-      "isbn": 9789754583834,
-      "name": "Üretme Tüket",
-      "author": "Ali Ekber Yıldırım",
-      "categoryId": 8,
-      "publisher": "Sia Kitap Yayıncılık"
-    },
-    {
-      "id": 3,
-      "isbn": 9789754583834,
-      "name": "Üretme Tüket",
-      "author": "Ali Ekber Yıldırım",
-      "categoryId": 8,
-      "publisher": "Sia Kitap Yayıncılık"
-    },
-    {
-      "id": 3,
-      "isbn": 9789754583834,
-      "name": "Üretme Tüket",
-      "author": "Ali Ekber Yıldırım",
-      "categoryId": 8,
-      "publisher": "Sia Kitap Yayıncılık"
-    },
-    {
-      "id": 3,
-      "isbn": 9789754583834,
-      "name": "Üretme Tüket",
-      "author": "Ali Ekber Yıldırım",
-      "categoryId": 8,
-      "publisher": "Sia Kitap Yayıncılık"
-    },
-    {
-      "id": 3,
-      "isbn": 9789754583834,
-      "name": "Üretme Tüket",
-      "author": "Ali Ekber Yıldırım",
-      "categoryId": 8,
-      "publisher": "Sia Kitap Yayıncılık"
-    },
-    {
-      "id": 3,
-      "isbn": 9789754583834,
-      "name": "Üretme Tüket",
-      "author": "Ali Ekber Yıldırım",
-      "categoryId": 8,
-      "publisher": "Sia Kitap Yayıncılık"
     }
   ],
   "travelingLibrary": [
@@ -121,12 +73,6 @@
       "userId": 1,
       "bookId": 1,
       "dateStarted": "2022-11-01"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "bookId": 2,
-      "dateStarted": "2021-12-01"
     }
   ]
 }
