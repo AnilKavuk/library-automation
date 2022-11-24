@@ -55,7 +55,7 @@
       "isbn": 9789754583863,
       "name": "Bioshock: Rapture Şehri",
       "author": "John Shirley",
-      "categoryId": 1,
+      "categoryId": "1",
       "publisher": "İthaki Yayınları"
     },
     {
@@ -71,8 +71,24 @@
       "isbn": "9645463654694",
       "name": "Seksen Günde Dünya Gezisi",
       "author": "Jules Verne",
-      "categoryId": "6",
+      "categoryId": "2",
       "publisher": "Türkiye İş Bankası Kültür Yayınları"
+    },
+    {
+      "id": 4,
+      "isbn": "9656565456465",
+      "name": "Çocukluğum",
+      "author": "Maksim Gorki",
+      "categoryId": "2",
+      "publisher": "Türkiye İş Bankası Kültür Yayınları"
+    },
+    {
+      "id": 5,
+      "isbn": "9786052952528",
+      "name": "Zaman Makinesi",
+      "author": " H.G. Wells",
+      "categoryId": "1",
+      "publisher": "İş Bankası Kültür Yayınları"
     }
   ],
   "travelingLibrary": [

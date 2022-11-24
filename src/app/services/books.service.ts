@@ -29,6 +29,10 @@ export class BooksService {
     return this.httpClient.get<Book[]>(this.controllerUrl);
   }
 
+  post(addBook: Book):Observable<Book> {
+    return this.httpClient.post<Book>(this.controllerUrl, addBook);
+  }
+
   delete(id: number) {
     return this.httpClient.delete(`${this.controllerUrl}/${id}`);
   }

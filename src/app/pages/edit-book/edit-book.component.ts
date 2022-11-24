@@ -22,8 +22,7 @@ export class EditBookComponent implements OnInit {
   editBook!: FormGroup;
   book!: Book | null;
   selected!: number;
-  updateOrAdd: boolean = false;
-  title: string = 'Add Book';
+
   constructor(
     private bookCategoryService: BookCategoryService,
     private store: Store<AppStoreState>,
@@ -44,7 +43,7 @@ export class EditBookComponent implements OnInit {
   }
 
   selectChangeHandler(event: any) {
-    this.selected = event.target.value;
+    this.selected = Number(event.target.value);
   }
 
   editBookForm() {
@@ -60,17 +59,6 @@ export class EditBookComponent implements OnInit {
       publisher: [this.book?.publisher ?? '', Validators.required],
     });
   }
-
-  onSubmit() {
-    if (true) {
-      this.title = 'Book Update';
-      this.bookUpdate();
-    } else {
-      this.title = 'Book Add';
-      this.bookAdd();
-    }
-  }
-  bookAdd() {}
 
   bookUpdate() {
     this.bookService.update(this.editBook.value).subscribe({

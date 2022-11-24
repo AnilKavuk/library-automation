@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ToastrMessageService } from 'src/app/services/toastr-message.service';
-import { setBookModel } from 'src/app/store/book/book.actions';
 
 @Component({
   selector: 'app-home-page',
@@ -51,7 +50,7 @@ export class HomePageComponent implements OnInit {
 
   editPage(book: Book) {
     this.booksService.saveBookEdit(book);
-    this.router.navigateByUrl('editOrAddBook');
+    this.router.navigateByUrl('editBook');
   }
 
   deleteBook(id: number) {

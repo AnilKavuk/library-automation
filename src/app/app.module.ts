@@ -19,6 +19,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { ToastrModule } from 'ngx-toastr';
 import { appReducers } from './store/app.reducer';
+import { AddBookComponent } from './pages/add-book/add-book.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { appReducers } from './store/app.reducer';
     HomePageComponent,
     LoadingComponent,
     EditBookComponent,
+    AddBookComponent,
   ],
   imports: [
     CommonModule,

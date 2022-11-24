@@ -7,7 +7,7 @@
           style="border-radius: 15px"
         >
           <div class="card-body p-4 p-md-5">
-            <h3 class="mb-3 pb-2 pb-md-0 mb-md-3 text-center">Update Book</h3>
+            <h3 class="mb-3 pb-2 pb-md-0 mb-md-3 text-center">Add Book</h3>
 
             <div style="display: flex; justify-content: center">
               <img
@@ -16,7 +16,7 @@
                 alt="create-customer-image"
               />
             </div>
-            <form [formGroup]="editBook">
+            <form [formGroup]="addBook">
               <div class="row">
                 <div class="col-md-12 mb-4">
                   <label class="form-label" for="isbn">ISBN</label>
@@ -32,8 +32,8 @@
                       class="alert alert-danger"
                       role="alert"
                       *ngIf="
-                        editBook.get('isbn')?.hasError('required') &&
-                        (editBook.dirty || editBook.touched)
+                        addBook.get('isbn')?.hasError('required') &&
+                        (addBook.dirty || addBook.touched)
                       "
                     >
                       ISBN is required
@@ -42,8 +42,8 @@
                       class="alert alert-danger"
                       role="alert"
                       *ngIf="
-                        editBook.get('isbn')?.hasError('minlength') &&
-                        (editBook.dirty || editBook.touched)
+                        addBook.get('isbn')?.hasError('minlength') &&
+                        (addBook.dirty || addBook.touched)
                       "
                     >
                       ISBN minimum length must be 13 digits
@@ -65,8 +65,8 @@
                       class="alert alert-danger"
                       role="alert"
                       *ngIf="
-                        editBook.get('name')?.hasError('required') &&
-                        (editBook.dirty || editBook.touched)
+                        addBook.get('name')?.hasError('required') &&
+                        (addBook.dirty || addBook.touched)
                       "
                     >
                       Book Name is required
@@ -86,8 +86,8 @@
                       class="alert alert-danger"
                       role="alert"
                       *ngIf="
-                        editBook.get('author')?.hasError('required') &&
-                        (editBook.dirty || editBook.touched)
+                        addBook.get('author')?.hasError('required') &&
+                        (addBook.dirty || addBook.touched)
                       "
                     >
                       Author Name is required
@@ -109,8 +109,8 @@
                       class="alert alert-danger"
                       role="alert"
                       *ngIf="
-                        editBook.get('author')?.hasError('required') &&
-                        (editBook.dirty || editBook.touched)
+                        addBook.get('author')?.hasError('required') &&
+                        (addBook.dirty || addBook.touched)
                       "
                     >
                       Publisher is required
@@ -129,9 +129,6 @@
                       (change)="selectChangeHandler($event)"
                       formControlName="categoryId"
                     >
-                      <!-- <option selected value="" disabled>
-                        --Please choose an option--
-                      </option> -->
                       <option
                         *ngFor="let bookCategory of bookCategories"
                         value="{{ bookCategory.id }}"
@@ -143,8 +140,8 @@
                       class="alert alert-danger"
                       role="alert"
                       *ngIf="
-                        editBook.get('categoryId')?.hasError('required') &&
-                        (editBook.dirty || editBook.touched)
+                        addBook.get('categoryId')?.hasError('required') &&
+                        (addBook.dirty || addBook.touched)
                       "
                     >
                       Publisher is required
@@ -155,8 +152,8 @@
             </form>
 
             <div class="mt-4 pt-2" style="float: left">
-              <button class="btn btn-success btn-lg" (click)="bookUpdate()">
-                Update
+              <button class="btn btn-success btn-lg" (click)="bookAdd()">
+                Add
               </button>
             </div>
           </div>
