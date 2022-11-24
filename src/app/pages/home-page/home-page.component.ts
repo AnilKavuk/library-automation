@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/services/books.service';
 import { LoadingService } from 'src/app/services/loading.service';
+import { Router } from '@angular/router';
 import { ToastrMessageService } from 'src/app/services/toastr-message.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class HomePageComponent implements OnInit {
   constructor(
     private booksService: BooksService,
     private loadingService: LoadingService,
-    private toaster: ToastrMessageService
+    private toaster: ToastrMessageService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -39,11 +41,8 @@ export class HomePageComponent implements OnInit {
     }, 500);
   }
 
-  isPageLoading() {
-    this.loadingService.isLoadingBehavior.subscribe((loading) => {
-      console.log('HomePage', loading);
-      this.isLoading = loading;
-    });
+  editPage() {
+    this.router.navigateByUrl('editBook');
   }
 
   deleteBook(id: number) {
@@ -68,6 +67,13 @@ export class HomePageComponent implements OnInit {
     } else {
       this.toaster.info('The deletion has been cancelled.', 'Delete Book Info');
     }
+  }
+
+  isPageLoading() {
+    this.loadingService.isLoadingBehavior.subscribe((loading) => {
+      console.log('HomePage', loading);
+      this.isLoading = loading;
+    });
   }
 
   loading() {
