@@ -21,6 +21,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { appReducers } from './store/app.reducer';
 import { AddBookComponent } from './pages/add-book/add-book.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { BorrowBookComponent } from './pages/borrow-book/borrow-book.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     EditBookComponent,
     AddBookComponent,
     SignUpComponent,
+    BorrowBookComponent,
   ],
   imports: [
     CommonModule,

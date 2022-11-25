@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { AddBookComponent } from './pages/add-book/add-book.component';
+import { BorrowBookComponent } from './pages/borrow-book/borrow-book.component';
 import { EditBookComponent } from './pages/edit-book/edit-book.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -16,6 +17,11 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'home', component: HomePageComponent, canActivate: [LoginGuard] },
+  {
+    path: 'borrowBook',
+    component: BorrowBookComponent,
+    canActivate: [LoginGuard],
+  },
   { path: 'login', component: LoginComponent },
   {
     path: 'editBook',
