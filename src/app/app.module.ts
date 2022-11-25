@@ -20,6 +20,7 @@ import { StoreModule } from '@ngrx/store';
 import { ToastrModule } from 'ngx-toastr';
 import { appReducers } from './store/app.reducer';
 import { AddBookComponent } from './pages/add-book/add-book.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AddBookComponent } from './pages/add-book/add-book.component';
     LoadingComponent,
     EditBookComponent,
     AddBookComponent,
+    SignUpComponent,
   ],
   imports: [
     CommonModule,

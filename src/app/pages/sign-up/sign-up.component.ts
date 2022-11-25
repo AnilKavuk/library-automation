@@ -4,17 +4,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppStoreState } from 'src/app/store/app.state';
 import { LoginDto } from 'src/app/models/loginDto';
 import { LoginService } from 'src/app/services/login.service';
-import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ToastrMessageService } from 'src/app/services/toastr-message.service';
 import { User } from 'src/app/models/user';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class SignUpComponent implements OnInit {
   loginForm!: FormGroup;
   private loginDto!: LoginDto;
   private findLogin!: User;
@@ -23,13 +22,13 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService,
     private store: Store<AppStoreState>,
     private toastr: ToastrMessageService,
-    private formBuilder: FormBuilder,
-    private router: Router
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {
     this.loginDtoForm();
   }
+
   loginDtoForm() {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -37,17 +36,5 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  private getUsers() {
-    this.loginService.checkUser().subscribe((response) => {
-      this.userArray=response;
-    });
-  }
-
-  login() {
-    this.getUsers();
-  }
-
-  registerPage() {
-    this.router.navigateByUrl('signup');
-  }
+  login() {}
 }
