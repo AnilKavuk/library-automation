@@ -37,14 +37,28 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  private getUsers() {
-    this.loginService.checkUser().subscribe((response) => {
-      this.userArray=response;
-    });
-  }
-
   login() {
-    this.getUsers();
+    this.loginService.checkUser().subscribe({
+      next: (res) => {
+        const user = res.find((user: User) => {
+          return (
+            user.email === this.loginForm.value.email &&
+            user.password === this.loginForm.value.password
+          );
+        });
+        if (user) {
+          console.log('User: ', user);
+          this.toastr.success('Login Success', 'Login');
+          this.loginForm.reset();
+          this.router.navigateByUrl('home');
+        } else {
+          this.toastr.error('Login Failed', 'Login');
+        }
+      },
+      error: (err) => {
+        this.toastr.error('Something went wrong', 'Error');
+      },
+    });
   }
 
   registerPage() {

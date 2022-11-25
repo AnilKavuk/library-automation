@@ -9,8 +9,52 @@
         />
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form [formGroup]="loginForm">
+        <form [formGroup]="registerForm">
           <h3 class="mb-3">Sign Up</h3>
+
+          <!-- firstName input-->
+          <div class="form-outline mb-4">
+            <input
+              formControlName="firstName"
+              type="text"
+              id="form3Example3"
+              class="form-control form-control-lg"
+              placeholder="Enter First Name"
+            />
+            <div
+              class="alert alert-danger"
+              role="alert"
+              *ngIf="
+                registerForm.get('firstName')?.hasError('required') &&
+                (registerForm.dirty || registerForm.touched)
+              "
+            >
+              FirstName is required
+            </div>
+          </div>
+          <!-- firstName input-->
+
+          <!-- firstName input-->
+          <div class="form-outline mb-4">
+            <input
+              formControlName="lastName"
+              type="text"
+              id="form3Example3"
+              class="form-control form-control-lg"
+              placeholder="Enter Last Name"
+            />
+            <div
+              class="alert alert-danger"
+              role="alert"
+              *ngIf="
+                registerForm.get('lastName')?.hasError('required') &&
+                (registerForm.dirty || registerForm.touched)
+              "
+            >
+              FirstName is required
+            </div>
+          </div>
+          <!-- firstName input-->
 
           <!-- Email input -->
           <div class="form-outline mb-4">
@@ -25,8 +69,8 @@
               class="alert alert-danger"
               role="alert"
               *ngIf="
-                loginForm.get('email')?.hasError('required') &&
-                (loginForm.dirty || loginForm.touched)
+                registerForm.get('email')?.hasError('required') &&
+                (registerForm.dirty || registerForm.touched)
               "
             >
               Email is required
@@ -36,13 +80,15 @@
               class="alert alert-danger"
               role="alert"
               *ngIf="
-                loginForm.get('email')?.hasError('email') &&
-                (loginForm.dirty || loginForm.touched)
+                registerForm.get('email')?.hasError('email') &&
+                (registerForm.dirty || registerForm.touched)
               "
             >
               you must enter your email address
             </div>
           </div>
+
+          <!-- Email input -->
 
           <!-- Password input -->
           <div class="form-outline mb-3">
@@ -59,8 +105,8 @@
               class="alert alert-danger"
               role="alert"
               *ngIf="
-                loginForm.get('password')?.hasError('required') &&
-                (loginForm.dirty || loginForm.touched)
+                registerForm.get('password')?.hasError('required') &&
+                (registerForm.dirty || registerForm.touched)
               "
             >
               Password is required
@@ -69,26 +115,23 @@
               class="alert alert-danger"
               role="alert"
               *ngIf="
-                loginForm.get('password')?.hasError('minlength') &&
-                (loginForm.dirty || loginForm.touched)
+                registerForm.get('password')?.hasError('minlength') &&
+                (registerForm.dirty || registerForm.touched)
               "
             >
               Password must be minimum 8 length
             </div>
           </div>
+          <!-- Password input -->
           <div class="text-center text-lg-start mt-4 pt-2">
             <button
               type="button"
               class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem"
-              (click)="login()"
+              (click)="register()"
             >
-              Login
+              Sign Up
             </button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">
-              Don't have an account?
-              <a href="#!" class="link-danger">Register</a>
-            </p>
           </div>
         </form>
       </div>
