@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppStoreState } from 'src/app/store/app.state';
 import { LoginDto } from 'src/app/models/loginDto';
 import { LoginService } from 'src/app/services/login.service';
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ToastrMessageService } from 'src/app/services/toastr-message.service';
@@ -16,16 +17,16 @@ import { User } from 'src/app/models/user';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  private loginDto!: LoginDto;
-  private findLogin!: User;
-  private userArray!: User;
+  loginDto$: Observable<LoginDto | null>;
   constructor(
     private loginService: LoginService,
     private store: Store<AppStoreState>,
     private toastr: ToastrMessageService,
     private formBuilder: FormBuilder,
     private router: Router
-  ) {}
+  ) {
+    this.loginDto$ = this.store.select((state) => state.auth.loginDtoModel);
+  }
 
   ngOnInit(): void {
     this.loginDtoForm();
@@ -48,8 +49,20 @@ export class LoginComponent implements OnInit {
         });
         if (user) {
           console.log('User: ', user);
+          const loginDto = {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            role: user.role,
+            isLogin: true,
+          };
+
+          localStorage.setItem('isRole', user.role);
+
+          this.loginService.saveLoginDto(loginDto);
           this.toastr.success('Login Success', 'Login');
           this.loginForm.reset();
+          localStorage.setItem('isLogin', 'true');
           this.router.navigateByUrl('home');
         } else {
           this.toastr.error('Login Failed', 'Login');

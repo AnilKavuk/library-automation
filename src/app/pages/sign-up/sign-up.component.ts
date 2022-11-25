@@ -43,7 +43,7 @@ export class SignUpComponent implements OnInit {
   register() {
     const user: User = {
       id: 0,
-      name: `'${this.registerForm.value.firstName} ${this.registerForm.value.lastName}'`,
+      name: `${this.registerForm.value.firstName} ${this.registerForm.value.lastName}`,
       email: this.registerForm.value.email,
       password: this.registerForm.value.password,
       role: 'user',

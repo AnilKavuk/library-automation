@@ -41,10 +41,18 @@
             {{ book.author }}
           </p>
           <div class="d-flex justify-content-around my-4">
-            <button class="btn btn-danger" (click)="deleteBook(book.id)">
+            <button
+              *ngIf="loginDto?.role == 'admin'"
+              class="btn btn-danger"
+              (click)="deleteBook(book.id)"
+            >
               Delete
             </button>
-            <button class="btn btn-primary" (click)="editPage(book)">
+            <button
+              *ngIf="loginDto?.role == 'admin'"
+              class="btn btn-primary"
+              (click)="editPage(book)"
+            >
               Edit
             </button>
           </div>

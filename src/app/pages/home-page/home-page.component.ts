@@ -4,6 +4,7 @@ import { AppStoreState } from 'src/app/store/app.state';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/services/books.service';
 import { LoadingService } from 'src/app/services/loading.service';
+import { LoginDto } from 'src/app/models/loginDto';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -18,6 +19,8 @@ export class HomePageComponent implements OnInit {
   books!: Book[];
   isLoading!: boolean;
   bookModel$: Observable<Book | null>;
+  loginDto$: Observable<LoginDto | null>;
+  loginDto!: LoginDto;
   constructor(
     private booksService: BooksService,
     private loadingService: LoadingService,
@@ -26,12 +29,16 @@ export class HomePageComponent implements OnInit {
     private store: Store<AppStoreState>
   ) {
     this.bookModel$ = this.store.select((state) => state.book.bookModel);
+    this.loginDto$ = this.store.select((state) => state.auth.loginDtoModel);
   }
 
   ngOnInit(): void {
     this.isPageLoading();
     this.loading();
     this.getBooks();
+    this.loginDto$.subscribe((res) => {
+      if (res != null) this.loginDto = res;
+    });
   }
 
   //Todo  Kitapları Api çektiğimiz fonksiyon
