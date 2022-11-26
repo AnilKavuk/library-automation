@@ -22,6 +22,7 @@ import { appReducers } from './store/app.reducer';
 import { AddBookComponent } from './pages/add-book/add-book.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { BorrowBookComponent } from './pages/borrow-book/borrow-book.component';
+import { MyBorrowListComponent } from './pages/my-borrow-list/my-borrow-list.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { BorrowBookComponent } from './pages/borrow-book/borrow-book.component';
     AddBookComponent,
     SignUpComponent,
     BorrowBookComponent,
+    MyBorrowListComponent,
   ],
   imports: [
     CommonModule,

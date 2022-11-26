@@ -16,27 +16,34 @@ export class NavbarComponent implements OnInit {
   isLogin: boolean = false;
   loginDto$: Observable<LoginDto | null>;
   loginDto!: LoginDto;
-  isRole!: boolean;
+  isRole: boolean = false;
+
   constructor(
     private router: Router,
     private loginService: LoginService,
     private store: Store<AppStoreState>
   ) {
-    this.isLogin = this.loginService.isAuthenticated;
     this.loginDto$ = this.store.select((state) => state.auth.loginDtoModel);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.login();
+  }
 
   login() {
     this.isLogin = this.loginService.isAuthenticated;
-    this.isLogin = this.loginService.isRole;
+    this.isRole = this.loginService.isRole;
     this.loginDto$.subscribe((res) => {
-      if (res != null) this.loginDto = res;
+      if (res != null) {
+        this.loginDto = res;
+        this.isLogin = true;
+      }
     });
   }
 
   logout() {
+    this.isLogin = this.loginService.isAuthenticated;
+    this.isRole = this.loginService.isRole;
     this.loginService.logout();
     this.router.navigateByUrl('login');
   }

@@ -22,7 +22,10 @@
           >Burrow a Book</a
         >
 
-        <a class="nav-item nav-link" routerLinkActive="active"
+        <a
+          class="nav-item nav-link"
+          [routerLink]="'/myBorrowList/'"
+          routerLinkActive="active"
           >My List of Books Borrowed</a
         >
 
@@ -34,19 +37,18 @@
         >
       </div>
 
-      <div *ngIf="isLogin == false" class="navbar-nav ms-auto">
+      <div class="navbar-nav ms-auto" *ngIf="!isLogin">
         <button
           class="nav-item nav-link btn btn-success"
           style="color: white"
           routerLink="login"
+          (click)="login()"
         >
           Login
         </button>
       </div>
-      <div
-        *ngIf="isLogin == true || loginDto?.isLogin == true"
-        class="navbar-nav ms-auto"
-      >
+
+      <div class="navbar-nav ms-auto" *ngIf="isLogin">
         <button
           class="nav-item nav-link btn btn-danger"
           style="color: white"
@@ -54,6 +56,23 @@
         >
           Logout
         </button>
+      </div>
+
+      <div class="navbar-nav" *ngIf="isLogin">
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 10px;
+          "
+        >
+          <img
+            src="assets/images/img_avattar.png"
+            class="avatar img-responsive"
+          />
+          <span class="me-3">Hoşgeldin! ({{ (loginDto$ | async)!.name }})</span>
+        </div>
       </div>
     </div>
   </div>

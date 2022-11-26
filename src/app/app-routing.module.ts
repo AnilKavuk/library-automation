@@ -6,6 +6,7 @@ import { EditBookComponent } from './pages/edit-book/edit-book.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LoginGuard } from './guards/login.guard';
+import { MyBorrowListComponent } from './pages/my-borrow-list/my-borrow-list.component';
 import { NgModule } from '@angular/core';
 import { RoleGuard } from './guards/role.guard';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
@@ -20,6 +21,11 @@ const routes: Routes = [
   {
     path: 'borrowBook',
     component: BorrowBookComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'myBorrowList/:fullName',
+    component: MyBorrowListComponent,
     canActivate: [LoginGuard],
   },
   { path: 'login', component: LoginComponent },
