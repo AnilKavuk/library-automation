@@ -23,6 +23,7 @@ import { AddBookComponent } from './pages/add-book/add-book.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { BorrowBookComponent } from './pages/borrow-book/borrow-book.component';
 import { MyBorrowListComponent } from './pages/my-borrow-list/my-borrow-list.component';
+import { BookFilterpipePipe } from './pipes/book-filterpipe.pipe';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MyBorrowListComponent } from './pages/my-borrow-list/my-borrow-list.com
     SignUpComponent,
     BorrowBookComponent,
     MyBorrowListComponent,
+    BookFilterpipePipe,
   ],
   imports: [
     CommonModule,

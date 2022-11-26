@@ -8,17 +8,45 @@
   ></div>
 
   <form class="mb-5">
-    <label class="mx-2">Publisher:</label
-    ><input type="text" name="customerName" /> <label class="mx-2">ISBN:</label
-    ><input type="text" /> <label class="mx-2">Book Name:</label
-    ><input type="text" /> <label class="mx-2">Author:</label
-    ><input type="text" />
+    <input
+      type="text"
+      name="publisher"
+      placeholder="   Search Publisher"
+      [(ngModel)]="publisher"
+    />
+
+    <input
+      type="text"
+      name="isbn"
+      placeholder="   Search ISBN"
+      [(ngModel)]="isbn"
+    />
+
+    <input
+      type="text"
+      name="bookName"
+      placeholder="   Search Book Name"
+      [(ngModel)]="bookName"
+    />
+
+    <input
+      type="text"
+      name="author"
+      placeholder="   Search Author"
+      [(ngModel)]="author"
+    />
   </form>
 
   <div class="row">
     <div
       class="col-sm-12 col-md-4 col-lg-3 mb-3 d-flex align-items-stretch"
-      *ngFor="let book of books"
+      *ngFor="
+        let book of books
+          | bookFilterpipe: 'publisher':publisher
+          | bookFilterpipe: 'isbn':isbn
+          | bookFilterpipe: 'bookName':bookName
+          | bookFilterpipe: 'author':author
+      "
     >
       <div class="card">
         <img

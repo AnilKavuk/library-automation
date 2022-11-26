@@ -21,6 +21,10 @@ export class HomePageComponent implements OnInit {
   bookModel$: Observable<Book | null>;
   loginDto$: Observable<LoginDto | null>;
   loginDto!: LoginDto;
+  publisher: string = '';
+  isbn: string = '';
+  bookName: string = '';
+  author: string = '';
   constructor(
     private booksService: BooksService,
     private loadingService: LoadingService,

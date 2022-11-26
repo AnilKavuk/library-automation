@@ -23,6 +23,7 @@ export class BorrowBookComponent implements OnInit {
   borrowBooks!: FormGroup;
   loginDto$: Observable<LoginDto | null>;
   loginDto!: LoginDto;
+  bookName: string = '';
   constructor(
     private bookService: BooksService,
     private store: Store<AppStoreState>,

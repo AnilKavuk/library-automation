@@ -128,6 +128,14 @@
       "author": "Dan Brown",
       "categoryId": "6",
       "publisher": "Altın Kitaplar"
+    },
+    {
+      "isbn": "9786258431155",
+      "name": "Dakikalar İçinde Dünya Tarihi",
+      "author": " Halide Edib Adıvar",
+      "categoryId": "7",
+      "publisher": "Kronik Kitap",
+      "id": 10
     }
   ],
   "travelingLibrary": [
@@ -147,6 +155,24 @@
       "id": 3,
       "userId": 2,
       "bookId": 9,
+      "dateStarted": "2022-11-26"
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "bookId": 2,
+      "dateStarted": "2022-11-26"
+    },
+    {
+      "id": 5,
+      "userId": 3,
+      "bookId": 5,
+      "dateStarted": "2022-11-26"
+    },
+    {
+      "id": 6,
+      "userId": 3,
+      "bookId": 4,
       "dateStarted": "2022-11-26"
     }
   ]
