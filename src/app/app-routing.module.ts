@@ -24,7 +24,7 @@ const routes: Routes = [
     canActivate: [LoginGuard],
   },
   {
-    path: 'myBorrowList/:fullName',
+    path: 'myBorrowList/:id',
     component: MyBorrowListComponent,
     canActivate: [LoginGuard],
   },

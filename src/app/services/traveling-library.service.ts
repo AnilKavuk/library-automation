@@ -17,4 +17,10 @@ export class TravelingLibraryService {
       borrowBook
     );
   }
+
+  getBurrowBook(id: number): Observable<TravelingLibrary[]> {
+    return this.httpClient.get<TravelingLibrary[]>(
+      `${this.controllerUrl}?userId=${id}`
+    );
+  }
 }

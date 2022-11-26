@@ -24,7 +24,7 @@
 
         <a
           class="nav-item nav-link"
-          [routerLink]="'/myBorrowList/'"
+          [routerLink]="'/myBorrowList/' + (loginDto$ | async)?.id"
           routerLinkActive="active"
           >My List of Books Borrowed</a
         >
@@ -49,16 +49,6 @@
       </div>
 
       <div class="navbar-nav ms-auto" *ngIf="isLogin">
-        <button
-          class="nav-item nav-link btn btn-danger"
-          style="color: white"
-          (click)="logout()"
-        >
-          Logout
-        </button>
-      </div>
-
-      <div class="navbar-nav" *ngIf="isLogin">
         <div
           style="
             display: flex;
@@ -73,6 +63,16 @@
           />
           <span class="me-3">Hoşgeldin! ({{ (loginDto$ | async)!.name }})</span>
         </div>
+      </div>
+
+      <div class="navbar-nav" *ngIf="isLogin">
+        <button
+          class="nav-item nav-link btn btn-danger"
+          style="color: white"
+          (click)="logout()"
+        >
+          Logout
+        </button>
       </div>
     </div>
   </div>
