@@ -13,7 +13,6 @@
                     id="isbn"
                     class="form-control form-control-lg"
                     placeholder="Search Book"
-                    formControlName="isbn"
                   />
                 </div>
               </div>
@@ -26,6 +25,7 @@
                       class="quiz_checkbox"
                       type="checkbox"
                       id="1"
+                      (change)="selectChangeHandler($event)"
                       [value]="book.id"
                     />
                     <div class="single_quiz_card">
@@ -51,7 +51,9 @@
                 </div>
                 <div class="col-lg-12 col-md-6">
                   <div class="quiz_next">
-                    <button class="quiz_continueBtn mb-5 float-lg-start">
+                    <button class="quiz_continueBtn mb-5 float-lg-start"
+                    (click)="borrowBook()"
+                    >
                       Borrow Book
                     </button>
                   </div>

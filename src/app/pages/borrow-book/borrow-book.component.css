@@ -6,7 +6,10 @@
   -webkit-box-sizing: border-box;
 }
 
-
+.allWrapper {
+  position: relative;
+  bottom: 0;
+}
 
 :focus {
   outline: 0px;
@@ -160,24 +163,24 @@
 }
 
 .quiz_backBtn {
-  background-color: #2575fc;
+  background-color: #208637;
 }
 
 
 
 .quiz_section {
   /* fallback for old browsers */
-  background: #699dd4;
+  background: #E8E9EB;
 
   /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-linear-gradient(to bottom right,
-      rgb(134, 185, 240),
-      rgba(105, 157, 212, 1));
+      rgb(232, 233, 235),
+      rgba(232, 233, 235, 1));
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to bottom right,
-      rgb(134, 185, 240),
-      rgba(105, 157, 212, 1));
+      rgb(232, 233, 235),
+      rgba(232, 233, 235, 1));
 }
 
 @media screen and (max-width: 660px) {

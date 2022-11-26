@@ -93,9 +93,41 @@
       "id": 5,
       "isbn": "9786052952528",
       "name": "Zaman Makinesi",
-      "author": " H.G. Wells",
+      "author": "H.G. Wells",
       "categoryId": "1",
       "publisher": "İş Bankası Kültür Yayınları"
+    },
+    {
+      "id": 6,
+      "isbn": "9786052953624",
+      "name": "Sherlock Holmes Kızıl Dosya",
+      "author": "Sir Arthur Conan Doyle",
+      "categoryId": "5",
+      "publisher": "Ren Kitap"
+    },
+    {
+      "id": 7,
+      "isbn": "9786052951202",
+      "name": "Sis ve Gece",
+      "author": "Ahmet Ümit",
+      "categoryId": "5",
+      "publisher": "Yapı Kredi Yayınları"
+    },
+    {
+      "id": 8,
+      "isbn": "9786052954563",
+      "name": "Metro Triloji",
+      "author": "Dmitry Glukhovsky",
+      "categoryId": "1",
+      "publisher": "Panama Yayıncılık"
+    },
+    {
+      "id": 9,
+      "isbn": "9786052954906",
+      "name": "Başlangıç",
+      "author": "Dan Brown",
+      "categoryId": "6",
+      "publisher": "Altın Kitaplar"
     }
   ],
   "travelingLibrary": [
@@ -104,6 +136,18 @@
       "userId": 1,
       "bookId": 1,
       "dateStarted": "2022-11-01"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "bookId": 7,
+      "dateStarted": "2022-11-26"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "bookId": 9,
+      "dateStarted": "2022-11-26"
     }
   ]
 }
