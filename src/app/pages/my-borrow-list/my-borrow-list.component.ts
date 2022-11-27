@@ -72,7 +72,7 @@ export class MyBorrowListComponent implements OnInit {
       },
 
       complete: () => {
-        this.booksId = this.travelingLibraries.map((book) => book.id);
+        this.booksId = this.travelingLibraries.map((book) => book.bookId);
         console.log(this.booksId);
         this.filteredBooksArray = this.books.filter((item) =>
           this.booksId.includes(item.id)

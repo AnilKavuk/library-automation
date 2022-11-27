@@ -20,6 +20,13 @@
       "email": "murat@test.com",
       "password": "test1453",
       "role": "user"
+    },
+    {
+      "id": 4,
+      "name": "admin admin",
+      "email": "admin@test.com",
+      "password": "test1234",
+      "role": "admin"
     }
   ],
   "bookCategory": [
@@ -120,22 +127,6 @@
       "author": "Dmitry Glukhovsky",
       "categoryId": "1",
       "publisher": "Panama Yayıncılık"
-    },
-    {
-      "id": 9,
-      "isbn": "9786052954906",
-      "name": "Başlangıç",
-      "author": "Dan Brown",
-      "categoryId": "6",
-      "publisher": "Altın Kitaplar"
-    },
-    {
-      "isbn": "9786258431155",
-      "name": "Dakikalar İçinde Dünya Tarihi",
-      "author": " Halide Edib Adıvar",
-      "categoryId": "7",
-      "publisher": "Kronik Kitap",
-      "id": 10
     }
   ],
   "travelingLibrary": [
@@ -149,12 +140,6 @@
       "id": 2,
       "userId": 2,
       "bookId": 7,
-      "dateStarted": "2022-11-26"
-    },
-    {
-      "id": 3,
-      "userId": 2,
-      "bookId": 9,
       "dateStarted": "2022-11-26"
     },
     {
@@ -173,6 +158,24 @@
       "id": 6,
       "userId": 3,
       "bookId": 4,
+      "dateStarted": "2022-11-26"
+    },
+    {
+      "id": 7,
+      "userId": 4,
+      "bookId": 2,
+      "dateStarted": "2022-11-26"
+    },
+    {
+      "id": 8,
+      "userId": 4,
+      "bookId": 3,
+      "dateStarted": "2022-11-26"
+    },
+    {
+      "id": 9,
+      "userId": 4,
+      "bookId": 8,
       "dateStarted": "2022-11-26"
     }
   ]
