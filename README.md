@@ -17,4 +17,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Account with admin authority
 - `email`: admin@test.com 
- -`password`: test1234
+-`password`: test1234
