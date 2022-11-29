@@ -177,6 +177,12 @@
       "userId": 4,
       "bookId": 8,
       "dateStarted": "2022-11-26"
+    },
+    {
+      "id": 10,
+      "userId": 1,
+      "bookId": 2,
+      "dateStarted": "2022-11-26"
     }
   ]
 }

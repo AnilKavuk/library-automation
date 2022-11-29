@@ -1,5 +1,5 @@
 .footer {
-  display: inline-block;
+  display: flex;
   bottom: 0;
   height: 60px;
   width: 100%;
